@@ -1,0 +1,12 @@
+@keyframes punch {
+  from {
+    transform: rotate(-10deg) scale(1) translateY(50px);
+  }
+  to {
+    transform: rotate(10deg) scale(1.05) translateY(0);
+  }
+}
+
+@mixin punch {
+  animation: punch 0.2s ease-in 0.2s 1;
+}
