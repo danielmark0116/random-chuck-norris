@@ -1,0 +1,26 @@
+.btn-custom {
+  width: 100%;
+  background: $purple;
+  border-radius: 0;
+  margin: 0 auto !important;
+  font-size: 2rem;
+  color: $white;
+  @include boxshadow(0.05);
+  @include fade(0.3s);
+  &:hover {
+    cursor: pointer;
+    color: $white;
+  }
+  &:active,
+  &:focus {
+    outline: none !important;
+    border: none;
+    @include boxshadow(0.05);
+  }
+}
+
+@media (max-width: $bp-small) {
+  .btn-custom {
+    font-size: 1.7rem;
+  }
+}

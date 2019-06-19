@@ -6,10 +6,12 @@
 
 // IMPORTS
 @import 'font';
+@import 'mixins';
 @import 'variables';
 @import 'typography';
-@import 'mixins';
 @import 'keyframes';
 @import 'globals';
 @import 'components/header';
 @import 'components/app-window';
+@import 'components/buttons';
+@import 'components/footer';

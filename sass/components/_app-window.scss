@@ -1,10 +1,14 @@
 .app-window {
   max-width: $bp-medium;
   background: white;
-  height: 300px;
+  height: max-content;
   margin: 2rem auto 0;
   @include boxshadow(0.2);
   z-index: 200;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  @include fade(0.3s);
 }
 
 @media (max-width: $bp-medium) {

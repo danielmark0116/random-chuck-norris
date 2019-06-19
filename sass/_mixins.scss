@@ -1,3 +1,7 @@
 @mixin boxshadow($opacity) {
-  box-shadow: 0 10px 10px rgba(black, $opacity);
+  box-shadow: 0 2px 10px rgba(black, $opacity);
+}
+
+@mixin fade($param) {
+  transition: $param ease;
 }

@@ -25,10 +25,46 @@ h1 {
 }
 h2 {
   font-weight: $normal-font;
+  margin: 2rem 1rem;
+  font-size: 2rem;
+  & span {
+    font-weight: $bold-font;
+    text-transform: uppercase;
+    color: $purple;
+  }
 }
 h3 {
   font-weight: $light-font;
   text-align: center;
+}
+
+a {
+  color: $dark;
+  @include fade(0.3s);
+  &:hover {
+    color: $purple !important;
+    text-decoration: none;
+  }
+}
+
+p.result {
+  font-weight: $light-font;
+  font-size: 1.5rem;
+  padding: 0 2rem;
+  position: relative;
+  width: 100%;
+  letter-spacing: 1px;
+  &::before,
+  &::after {
+    font-size: 4rem;
+    color: rgba($dark, 0.2);
+  }
+  &::before {
+    position: absolute;
+    content: ',,';
+    top: -4.5rem;
+    left: 1rem;
+  }
 }
 
 @media (max-width: $bp-medium) {
