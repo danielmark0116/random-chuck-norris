@@ -2,7 +2,7 @@
 
 function randomJoke() {
   let xhr = new XMLHttpRequest();
-  xhr.open('GET', 'http://api.icndb.com/jokes/random');
+  xhr.open('GET', 'https://api.icndb.com/jokes/random');
   xhr.addEventListener('load', function() {
     let res = JSON.parse(xhr.response);
     document.querySelector('#result').innerHTML = res.value.joke;
