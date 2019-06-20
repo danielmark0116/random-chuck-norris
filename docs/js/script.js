@@ -2,11 +2,28 @@
 
 function randomJoke() {
   let xhr = new XMLHttpRequest();
-  xhr.open('GET', 'http://api.icndb.com/jokes/random');
-  xhr.addEventListener('load', function() {
-    let res = JSON.parse(xhr.response);
-    document.querySelector('#result').innerHTML = res.value.joke;
-  });
+  xhr.open('GET', 'https://api.icndb.com/jokes/random');
+
+  xhr.onreadystatechange = function() {
+    if (this.readyState === 4) {
+      if (this.status === 200) {
+        let res = JSON.parse(xhr.response);
+        document.querySelector('#result').innerHTML = res.value.joke;
+      } else {
+        console.error('Error: could not fetch the data');
+        document.querySelector('#result').innerHTML = '';
+        document.querySelector('#result').insertAdjacentHTML(
+          'afterbegin',
+          `
+            <p class="text-secondary">
+              Could not get a joke, sorry :C
+            </p>
+          `
+        );
+      }
+    }
+  };
+
   document.querySelector('#result').innerHTML = '';
   document.querySelector('#result').insertAdjacentHTML(
     'afterbegin',
